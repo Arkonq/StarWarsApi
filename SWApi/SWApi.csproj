@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\Script01 -Create table Persons .sql" />
+    <None Remove="Scripts\Script02 -Create table Films.sql" />
+    <None Remove="Scripts\Script03 -Create table Species.sql" />
+    <None Remove="Scripts\Script04 -Create table Vehicles.sql" />
+    <None Remove="Scripts\Script05 -Create table Starships.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Script01 -Create table Persons .sql" />
+    <EmbeddedResource Include="Scripts\Script02 -Create table Films.sql" />
+    <EmbeddedResource Include="Scripts\Script03 -Create table Species.sql" />
+    <EmbeddedResource Include="Scripts\Script04 -Create table Vehicles.sql" />
+    <EmbeddedResource Include="Scripts\Script05 -Create table Starships.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="dbup" Version="4.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="persons.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
